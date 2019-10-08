@@ -15,6 +15,8 @@ resource "google_container_cluster" "primary" {
   }
 
   node_config {
+    machine_type = "n1-standard-2"
+
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform",
     ]
