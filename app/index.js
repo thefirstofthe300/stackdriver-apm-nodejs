@@ -13,9 +13,22 @@
  * limitations under the License.
  */
 
+const serviceContext = {
+  service: 'node-tracer',
+  version: '1.0.0'
+}
+
 if (process.env.NODE_ENV === 'production') {
   require('@google-cloud/trace-agent').start({
-    logLevel: 4
+    serviceContext: serviceContext,
+    logLevel: 4,
+  });
+}
+
+if (process.env.NODE_ENV === 'production') {
+  require('@google-cloud/profiler').start({
+    serviceContext: serviceContext,
+    logLevel: 4,
   });
 }
 
