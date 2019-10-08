@@ -13,16 +13,14 @@
  * limitations under the License.
  */
 
-'use strict';
-
 if (process.env.NODE_ENV === 'production') {
   require('@google-cloud/trace-agent').start({
     logLevel: 4
   });
 }
 
-import('express');
-import('got');
+const express = require('express');
+const got = require('got');
 
 const app = express();
 const DISCOVERY_URL = 'https://www.googleapis.com/discovery/v1/apis';
@@ -46,7 +44,6 @@ app.get('/', async (req, res) => {
   }
 });
 
-// Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
