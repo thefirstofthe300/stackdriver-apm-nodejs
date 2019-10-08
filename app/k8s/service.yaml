@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: node-tracing
+  name: node-tracer
 spec:
+  type: LoadBalancer
   selector:
-    app: node-tracing
+    app: node-tracer
   ports:
     - port: 80
       targetPort: 8080
