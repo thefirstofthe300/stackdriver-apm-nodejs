@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-tracer
+spec:
+  selector:
+    matchLabels:
+      app: node-tracer
+  template:
+    metadata:
+      labels:
+        app: node-tracer
+    spec:
+      containers:
+        - name: node-tracer
+          image: gcr.io/amish-paradise/stackdriver-tracing-nodejs
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080

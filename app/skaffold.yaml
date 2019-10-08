@@ -1,0 +1,12 @@
+apiVersion: skaffold/v1beta15
+kind: Config
+metadata:
+  name: node-tracer
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - image: gcr.io/amish-paradise/stackdriver-tracing-nodejs
+  googleCloudBuild: {}
+deploy:
+  kubectl: {}

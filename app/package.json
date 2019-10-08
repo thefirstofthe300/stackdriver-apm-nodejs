@@ -1,0 +1,29 @@
+{
+  "name": "cloud-trace-nodejs-samples",
+  "description": "Sample for Google Stackdriver Trace on Google App Engine Standard Environment.",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Google Inc.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/googleapis/cloud-trace-nodejs.git"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "deploy": "gcloud app deploy",
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "@google-cloud/trace-agent": "^4.2.0",
+    "express": "^4.16.4",
+    "got": "^9.3.2"
+  },
+  "devDependencies": {
+    "execa": "^2.0.1",
+    "mocha": "^6.1.4"
+  }
+}
