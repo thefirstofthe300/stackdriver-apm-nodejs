@@ -15,15 +15,14 @@
 
 'use strict';
 
-// [START trace_setup_nodejs_app]
 if (process.env.NODE_ENV === 'production') {
-  // [START trace_setup_nodejs_implicit]
-  require('@google-cloud/trace-agent').start();
-  // [END trace_setup_nodejs_implicit]
+  require('@google-cloud/trace-agent').start({
+    logLevel: 4
+  });
 }
 
-const express = require('express');
-const got = require('got');
+import('express');
+import('got');
 
 const app = express();
 const DISCOVERY_URL = 'https://www.googleapis.com/discovery/v1/apis';
