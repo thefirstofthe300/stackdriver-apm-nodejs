@@ -21,14 +21,14 @@ const serviceContext = {
 if (process.env.NODE_ENV === 'production') {
   require('@google-cloud/trace-agent').start({
     serviceContext: serviceContext,
-    logLevel: 4,
+    logLevel: 3,
   });
 }
 
 if (process.env.NODE_ENV === 'production') {
   require('@google-cloud/profiler').start({
     serviceContext: serviceContext,
-    logLevel: 4,
+    logLevel: 3,
   });
 }
 
